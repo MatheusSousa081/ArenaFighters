@@ -1,17 +1,21 @@
-package code.matheus.lib;
+package code.matheus.lib.window;
 
+import code.matheus.lib.graphics.Dimension;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 
-public final class Window {
-    private static final @NotNull JFrame jframe = new JFrame();
+public class Window extends JFrame {
+    public Window(@NotNull String title, @NotNull Dimension dimension) {
+        initialize(title, dimension);
+    }
 
-    public static void initialize() {
-        jframe.setTitle("Launcher");
-        jframe.setSize(1250, 730);
-        jframe.setVisible(true);
-        jframe.setLocationRelativeTo(null);
-        jframe.setDefaultCloseOperation(jframe.EXIT_ON_CLOSE);
+    private void initialize(@NotNull String title, @NotNull Dimension dimension) {
+        setTitle(title);
+        setSize(dimension.getWidth(), dimension.getHeight());
+        setVisible(true);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(true);
     }
 }
