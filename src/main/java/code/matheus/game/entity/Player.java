@@ -3,13 +3,13 @@ package code.matheus.game.entity;
 import code.matheus.lib.graphics.Dimension;
 import code.matheus.lib.graphics.Element;
 import code.matheus.lib.graphics.Location;
-import code.matheus.lib.graphics.Sprite;
+import code.matheus.lib.sprite.Sprite;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.util.Objects;
 
-public class Player implements Element {
+public class Player implements Element{
     private @NotNull String name;
     private @NotNull Dimension dimension;
     private @NotNull Location location;
@@ -17,8 +17,8 @@ public class Player implements Element {
 
     public Player(@NotNull String name, @NotNull Location location, @NotNull Dimension dimension, @NotNull Sprite sprite) {
         this.name = name;
-        this.dimension = dimension;
         this.location = location;
+        this.dimension = dimension;
         this.sprite = sprite;
     }
 
@@ -63,29 +63,6 @@ public class Player implements Element {
         graphics2D.drawImage(sprite.getImage(), location.getX(), location.getY(), dimension.getWidth(), dimension.getHeight(), null);
         graphics2D.drawString(name,location.getX() - 8, location.getY());
         graphics2D.dispose();
-    }
-
-    public void updatePosition(@NotNull Location location) {
-        this.location.setX(location.getX());
-        this.location.setY(location.getY());
-    }
-
-    public void updateDimension(@NotNull Dimension dimension) {
-        this.dimension.setWidth(dimension.getWidth());
-        this.dimension.setHeight(dimension.getHeight());
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Player player = (Player) o;
-        return Objects.equals(name, player.name) && Objects.equals(dimension, player.dimension) && Objects.equals(location, player.location) && Objects.equals(sprite, player.sprite);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, dimension, location, sprite);
     }
 
     @Override

@@ -39,27 +39,6 @@ public class Square implements Element{
         graphics2D.draw3DRect(location.getX(), location.getY(), dimension.getWidth(), dimension.getHeight(), true);
     }
 
-    public void updatePosition(@NotNull Location location) {
-        this.location = location;
-    }
-
-    public void updateDimension(@NotNull Dimension dimension) {
-        this.dimension = dimension;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Square square = (Square) o;
-        return Objects.equals(location, square.location) && Objects.equals(dimension, square.dimension);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(location, dimension);
-    }
-
     @Override
     public String toString() {
         return "Square{" +

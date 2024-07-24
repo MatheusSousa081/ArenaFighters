@@ -1,10 +1,9 @@
-package code.matheus.lib.graphics;
+package code.matheus.lib.sprite;
 
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.Objects;
 
